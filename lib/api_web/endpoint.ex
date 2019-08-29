@@ -41,4 +41,13 @@ defmodule ApiWeb.Endpoint do
     signing_salt: "wtFm6umR"
 
   plug ApiWeb.Router
+
+  plug Plug.Logger
+
+  plug Plug.Parsers,
+    parsers: [:urlencoded, :multipart, :json],
+    pass: ["*/*"],
+    json_decoder: Poison
+
+  plug Absinthe.Plug, schema: ApiWeb.Schema
 end
