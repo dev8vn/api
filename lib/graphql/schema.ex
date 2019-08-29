@@ -1,4 +1,4 @@
-defmodule ApiWeb.Schema do
+defmodule Graphql.Schema do
   use Absinthe.Schema
 
   query do
